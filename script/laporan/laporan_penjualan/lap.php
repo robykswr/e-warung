@@ -44,7 +44,7 @@ function rupiah($angka){
                       $no = 1;
                       $q = "SELECT a.*,b.nama FROM  t_pembelian a 
                             LEFT JOIN m_costumer b ON a.kd_nama = b.kd_nama
-                            WHERE a.tanggal BETWEEN '$_POST[name]' AND '$_POST[bln1]' AND '$_POST[bln2]'";
+                            WHERE (a.tanggal BETWEEN  '$_POST[bln1]' AND '$_POST[bln2]') AND '$_POST[name]'";
 
                       $rs = mysqli_query($query,$q);
                        while ($row = mysqli_fetch_array($rs)) {
